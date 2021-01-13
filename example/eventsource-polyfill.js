@@ -6467,8 +6467,8 @@ var EventSource = __webpack_require__(22)
 
 if (typeof window === 'object') {
   window.EventSourcePolyfill = EventSource
-  if (!window.EventSource) window.EventSource = EventSource
-  module.exports = window.EventSource
+  window.EventSource = EventSource
+  module.exports = EventSource
 } else {
   module.exports = EventSource
 }
@@ -6733,11 +6733,11 @@ function EventSource (url, eventSourceInitDict) {
   connect()
 
   function _emit () {
-    if (self.listeners(arguments[0]).length > 0) {
-      self.emit.apply(self, arguments)
-    }
     if ((typeof self.onEvent === 'function') && (['open', 'error', 'message'].indexOf(arguments[0]) < 0)) {
       self.onEvent(arguments[1])
+    }
+    if (self.listeners(arguments[0]).length > 0) {
+      self.emit.apply(self, arguments)
     }
   }
 

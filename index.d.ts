@@ -28,7 +28,7 @@ declare class EventSource {
   onopen: (evt: MessageEvent) => any;
   onmessage: (evt: MessageEvent) => any;
   onerror: (evt: MessageEvent) => any;
-  onevent: (evt: MessageEvent) => any;
+  onEvent: (evt: MessageEvent) => any;
 
   addEventListener(type: string, listener: EventListener): void;
 
