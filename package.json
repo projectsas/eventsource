@@ -1,6 +1,6 @@
 {
   "name": "@projectsas/eventsource",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "EventSource client for Node.js and browser (polyfill)",
   "keywords": [
     "eventsource",
