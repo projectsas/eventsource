@@ -1,5 +1,5 @@
 interface EventListener {
-  (evt: MessageEvent): void;
+  (evt: Event): void;
 }
 
 /**
@@ -43,20 +43,15 @@ interface Event {
   readonly BUBBLING_PHASE: number;
   readonly CAPTURING_PHASE: number;
   readonly NONE: number;
-
   composedPath(): any[];
-
   initEvent(type: string, bubbles?: boolean, cancelable?: boolean): void;
-
   preventDefault(): void;
-
   /**
    * Invoking this method prevents event from reaching
    * any registered event listeners after the current one finishes running and, when dispatched in a tree, also prevents event from reaching any
    * other objects.
    */
   stopImmediatePropagation(): void;
-
   /**
    * When dispatched in a tree, invoking this method prevents event from reaching any objects other than the current object.
    */
@@ -91,7 +86,6 @@ interface MessageEvent<T = any> extends Event {
    */
   readonly origin: string;
 }
-
 declare var MessageEvent: {
   prototype: MessageEvent;
   new<T>(type: string, eventInitDict?: MessageEventInit<T>): MessageEvent<T>;
