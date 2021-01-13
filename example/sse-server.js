@@ -1,7 +1,7 @@
 const express = require('express')
 const serveStatic = require('serve-static')
-const SseStream = require('ssestream')
-
+const SseStream = require('ssestream').default
+console.log(SseStream)
 const app = express()
 app.use(serveStatic(__dirname))
 app.get('/sse', (req, res) => {
@@ -23,7 +23,7 @@ app.get('/sse', (req, res) => {
   })
 })
 
-app.listen(8080, (err) => {
+app.listen(8088, (err) => {
   if (err) throw err
-  console.log('server ready on http://localhost:8080')
+  console.log('server ready on http://localhost:8088')
 })
