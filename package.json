@@ -10,13 +10,7 @@
     "polyfill"
   ],
   "homepage": "http://github.com/projectsas/eventsource",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/projectsas/eventsource.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "repository": "git://github.com/projectsas/eventsource.git",
   "directories": {
     "lib": "./lib"
   },
