@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <style>
     .col {
@@ -8,6 +8,7 @@
       left: 50%;
     }
   </style>
+  <title>EventSourcePolyfill</title>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 <script>
   function subscribe (es, ul) {
     es.onEvent = function (e) {
-      var li = document.createElement('LI')
+      var li = document.createElement('li')
       li.appendChild(document.createTextNode(e.type + ': ' + e.data))
       ul.appendChild(li)
     }
